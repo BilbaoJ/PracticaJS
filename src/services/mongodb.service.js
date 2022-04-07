@@ -20,6 +20,7 @@ const consultarDocumentos = async (nombreColeccion, filtro) => {
 
 const consultarTipoDocumentos = async (nombreColeccion) => {
   let db = await conectarDB()
+  // Se usa una operación de agregación ´$group´ para agrupar los registros por el tipo de propiedad
   let pipeline = [ { $group : { _id : "$property_type" } } ]
   let coleccion = db.collection(nombreColeccion).aggregate(pipeline)
   return coleccion.toArray()
@@ -27,7 +28,9 @@ const consultarTipoDocumentos = async (nombreColeccion) => {
 
 const consultarReviewsDocumentos = async (nombreColeccion) => {
   let db = await conectarDB()
+  // Se define el orden de los resultados de manera descendente según el campo ´number_of_reviews´
   let sort = { number_of_reviews: -1 }
+  // Se definen los campos que se van a traer de la base de datos de cada uno de los registros 1:los que se traen
   let projection = { _id: 0, name: 1, beds: 1 , number_of_reviews: 1, price: 1}
   let coleccion = db.collection(nombreColeccion)
   return coleccion.find().sort(sort).project(projection).limit(parseInt(process.env.DEFAULT_LIMIT_REVIEWS)).toArray()
@@ -35,7 +38,9 @@ const consultarReviewsDocumentos = async (nombreColeccion) => {
 
 const consultarDocumentosporCamas = async (nombreColeccion, limite) => {
   let db = await conectarDB()
+  // Se define el orden de los resultados de manera descendente según el campo ´beds´
   let sort = { beds: -1 }
+  // Se definen los campos que se van a traer de la base de datos de cada uno de los registros 1:los que se traen
   let projection = { _id: 0, name: 1, beds: 1 , number_of_reviews: 1, price: 1}
   let coleccion = db.collection(nombreColeccion)
   return coleccion.find().sort(sort).project(projection).limit(parseInt(limite)).toArray()
