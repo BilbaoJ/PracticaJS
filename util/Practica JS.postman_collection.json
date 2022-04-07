@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "1005a10c-f840-46cb-a70c-16f6f53abfe9",
+		"name": "Practica JS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listas y Reviews",
+			"item": [
+				{
+					"name": "All-properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/airbnb/all-properties",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"airbnb",
+								"all-properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/airbnb/types",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"airbnb",
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/airbnb/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"airbnb",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Beds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/airbnb/beds/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"airbnb",
+								"beds",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
