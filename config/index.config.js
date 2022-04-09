@@ -8,6 +8,7 @@ process.env.COLLECTION_AIRBNB = "listingsAndReviews"
 // Max 5555
 process.env.DEFAULT_LIMIT_PROPERTIES = 100
 
+// Variable para el límite del endpoint que debe consultar una cantidad esecífica de propiedades
 process.env.DEFAULT_LIMIT_REVIEWS = 20
 
 process.env.PORT = 3000
